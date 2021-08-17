@@ -23,7 +23,7 @@ const AboutUs = () => {
           <li><span className={style.bold}>react-responsive</span> for responsive web design</li>
         </ul>
       </p>
-      <p className={style.text}>Thank you itbook.store for providing some API for me to get real data from your database.
+      <p className={style.text}>Thank you itbook.store for providing some APIs for me to get real data from your database.
         <br />
         APIs can be found here:
         <span className={style.bold}>

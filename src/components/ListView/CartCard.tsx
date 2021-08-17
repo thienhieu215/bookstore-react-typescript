@@ -10,13 +10,14 @@ const FullsizeCard = ({ productInfo, increase, reduce, showRemove }: FullsizeCar
 
   return (
     <Card className={style.card}>
-      <Row >
-        <Col xs={3}>
-          <Card.Img className={style.img}
-            variant="top" src={productInfo.image} />
+      <Row>
+        <Col xs={3} className={style.img}>
+          <Card.Img variant="top" src={productInfo.image} />
         </Col>
         <Col xs={7} className={style.prodInfo}>
-          <Card.Title className={style.title}>{productInfo.title}</Card.Title>
+          <h4 className={style.title}>
+            <a>{productInfo.title}</a>
+          </h4>
           <Card.Text className={style.price}>{productInfo.price}</Card.Text>
           <div>
             <RemoveIcon className={style.quantityBtn} onClick={() => reduce(productInfo)} />
@@ -26,8 +27,8 @@ const FullsizeCard = ({ productInfo, increase, reduce, showRemove }: FullsizeCar
             <AddIcon className={style.quantityBtn} onClick={() => increase(productInfo)} />
           </div>
         </Col>
-        <Col xs={2}  >
-          <div className={style.removeItem} onClick={() => showRemove(productInfo)}><ClearIcon /></div>
+        <Col xs={2} className={style.removeItem}>
+          <div onClick={() => showRemove(productInfo)}><ClearIcon /></div>
         </Col>
       </Row>
     </Card>

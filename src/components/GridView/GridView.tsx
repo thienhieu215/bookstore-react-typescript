@@ -12,23 +12,21 @@ export interface Product {
   image: string
 };
 
-const GridView = ({newBooksList}: GridViewProps) => {
-  
+const GridView = ({ newBooksList }: GridViewProps) => {
+
   return (
     <Container>
-      <MediaQuery maxWidth={415}>
+      <MediaQuery maxWidth={768}>
         {newBooksList.map((product, index) => (
           <MobileCard productInfo={product} />
         ))}
       </MediaQuery>
-      <MediaQuery minWidth={415}>
-        <Row>
+      <MediaQuery minWidth={769}>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           {newBooksList.map((product, index) => (
-            <Col sm={6} md={4} lg={3}>
-              <FullsizeCard productInfo={product} />
-            </Col>
+            <FullsizeCard productInfo={product} />
           ))}
-        </Row>
+        </div>
       </MediaQuery>
     </Container>
   );
