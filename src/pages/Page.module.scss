@@ -1,0 +1,94 @@
+.HomePage {
+  .Title {
+    color: #b2395b;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}
+
+.SearchPage {
+  .Title {
+    color: black;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 20px;
+    .keyword {
+      color: #b2395b;
+    }
+  }
+}
+
+.DetailPage {
+  .bookInfo {
+    margin-bottom: 50px;
+    .price {
+      color: #f7941e;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    .btnGroup {
+      margin-bottom: 20px;
+      .quantityBtn {
+        box-shadow: none;
+        .quantity {
+          margin-left: 7px;
+          margin-right: 7px;
+        }
+      }
+    }
+    .addCartBtn {
+      color: #b2395b; background-color: whitesmoke;
+      outline: auto; outline-color: #b2395b;
+      box-shadow: none;
+      &:active:focus {
+        color: whitesmoke; background-color: #b2395b;
+        outline: auto; outline-color: #b2395b;
+        box-shadow: none;
+      }
+      &:focus {
+        color: #b2395b; background-color: whitesmoke;
+        outline: auto; outline-color: #b2395b;
+        box-shadow: none;
+      }
+    }
+  }
+  .Tabs {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    .nav-link.active {
+      color: #b2395b;
+    }
+    .tab > a {
+      color: #212529;
+    }
+    .tab > a:hover {
+      color: #b2395b;
+    }
+  }
+}
+
+.CartPage {
+  .Title {
+    color: #b2395b;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}
+
+.AboutPage {
+  text-align: left;
+  .title {
+    color: #b2395b;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .text {
+    font-size: 18px;
+    .bold{
+      font-weight: bold;
+    }
+  }
+}

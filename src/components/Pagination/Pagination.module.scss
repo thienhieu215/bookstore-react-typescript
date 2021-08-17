@@ -1,0 +1,17 @@
+.centeredRow {
+  margin-top: 30px;
+  justify-content: center;
+  .centeredCol {
+    display: flex;
+    justify-content: center;
+    .active a {
+      background-color: #b2395b;
+      border-color: #b2395b;
+      color: #fff;
+      box-shadow: none;
+    }
+    .inactive a {
+      color: #b2395b;
+    }
+  }
+}

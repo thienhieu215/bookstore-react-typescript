@@ -1,0 +1,25 @@
+.confirmBtn {
+  color: whitesmoke;
+  background-color: #b2395b;
+  border: none;
+  box-shadow: none;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  padding: .375rem .75rem;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  &:active:focus {
+    color: whitesmoke;
+    background-color: #7c273f;
+    border: none;
+    box-shadow: none;
+  }
+  &:focus {
+    color: whitesmoke;
+    background-color: #b2395b;
+    border: none;
+    box-shadow: none;
+  }
+}
