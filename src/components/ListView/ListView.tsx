@@ -84,14 +84,14 @@ const ListView = () => {
         />
 
         <Row>
-          <Col xs={12} sm={12} md={12} lg={8} className={style.marginBottom}>
+          <Col xs={12} sm={12} md={12} lg={8}>
             {items.length > 0 && <div className={style.clearAll} onClick={handleShowClearAll}>Clear All</div>}
             {items.length == 0 && <h4>No items in cart</h4>}
             {items.map((product, index) => (
               <CartCard productInfo={product} increase={increaseQuantity} reduce={reduceQuantity} showRemove={handleShowRemove} />
             ))}
           </Col>
-          <Col xs={12} sm={12} md={12} lg={4} className={style.marginBottom}>
+          <Col xs={12} sm={12} md={12} lg={4}>
 
             <MediaQuery minWidth={769}>
               <TotalPriceCard numbItems={numbItems} totalPrices={totalPrices} openDialogCheckout={setOpenDialogCheckout} />
