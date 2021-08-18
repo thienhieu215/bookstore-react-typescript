@@ -103,6 +103,50 @@
   }
 }
 
+.mobileTotalPrice {
+  padding: 9px 16px 34px;
+  background-color: rgb(255, 255, 255);
+  bottom: 0px;
+  position: fixed;
+  width:100%;
+  border: solid 1px #ebedee;
+  display: flex;
+  justify-content: space-between;
+  .summary {
+    text-align: left;
+    .price {
+      padding-top: 2%;
+      font-size: 1.3em;
+      color: #b2395b;
+      font-weight: 600;
+    }
+  }
+  .checkoutBtn {
+    color: whitesmoke;
+    background-color: #b2395b;
+    border: none;
+    box-shadow: none;
+    display: block;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    padding: 5px;
+    width: 136px;
+    &:active:focus {
+      color: whitesmoke;
+      background-color: #7c273f;
+      border: none;
+      box-shadow: none;
+    }
+    &:focus {
+      color: whitesmoke;
+      background-color: #b2395b;
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
 .marginBottom {
   margin-bottom: 10px;
 }

@@ -9,6 +9,9 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap'
 import style from './ListView.module.scss'
 import CartCard from './CartCard'
 import TotalPriceCard from './TotalPriceCard'
+import MediaQuery from 'react-responsive'
+import MobileTotalPriceCard from './MobileTotalPriceCard';
+
 
 export interface CartItem extends Product {
   quantity: string
@@ -66,32 +69,40 @@ const ListView = () => {
   }
 
   return (
-    <Container>
-      <Dialog title='Confirmation' agreeContent='Clear' closeContent='Cancel'
-        content='Are you sure you want to remove all items from your cart?'
-        func={clear} handleClose={handleCloseClearAll} isOpen={openDialogClearAll}
-      />
-      <Dialog title='Confirmation' agreeContent='Remove' closeContent='Cancel'
-        content='Are you sure you want to remove this item from your cart?'
-        func={() => removeItem(removeObj)} handleClose={handleShowCloseRemove} isOpen={openDialogRemove}
-      />
-      <CheckoutDialog title='Shipping Information' agreeContent='Check Out' closeContent='Cancel'
-        handleClose={() => setOpenDialogCheckout(false)} isOpen={openDialogCheckout}
-      />
+    <>
+      <Container>
+        <Dialog title='Confirmation' agreeContent='Clear' closeContent='Cancel'
+          content='Are you sure you want to remove all items from your cart?'
+          func={clear} handleClose={handleCloseClearAll} isOpen={openDialogClearAll}
+        />
+        <Dialog title='Confirmation' agreeContent='Remove' closeContent='Cancel'
+          content='Are you sure you want to remove this item from your cart?'
+          func={() => removeItem(removeObj)} handleClose={handleShowCloseRemove} isOpen={openDialogRemove}
+        />
+        <CheckoutDialog title='Shipping Information' agreeContent='Check Out' closeContent='Cancel'
+          handleClose={() => setOpenDialogCheckout(false)} isOpen={openDialogCheckout}
+        />
 
-      <Row>
-        <Col xs={12} sm={12} md={8} lg={8} className={style.marginBottom}>
-          {items.length > 0 && <div className={style.clearAll} onClick={handleShowClearAll}>Clear All</div>}
-          {items.length == 0 && <h4>No items in cart</h4>}
-          {items.map((product, index) => (
-            <CartCard productInfo={product} increase={increaseQuantity} reduce={reduceQuantity} showRemove={handleShowRemove} />
-          ))}
-        </Col>
-        <Col xs={12} sm={12} md={4} lg={4} className={style.marginBottom}>
-          <TotalPriceCard numbItems={numbItems} totalPrices={totalPrices} openDialogCheckout={setOpenDialogCheckout} />
-        </Col>
-      </Row>
-    </Container>
+        <Row>
+          <Col xs={12} sm={12} md={12} lg={8} className={style.marginBottom}>
+            {items.length > 0 && <div className={style.clearAll} onClick={handleShowClearAll}>Clear All</div>}
+            {items.length == 0 && <h4>No items in cart</h4>}
+            {items.map((product, index) => (
+              <CartCard productInfo={product} increase={increaseQuantity} reduce={reduceQuantity} showRemove={handleShowRemove} />
+            ))}
+          </Col>
+          <Col xs={12} sm={12} md={12} lg={4} className={style.marginBottom}>
+
+            <MediaQuery minWidth={769}>
+              <TotalPriceCard numbItems={numbItems} totalPrices={totalPrices} openDialogCheckout={setOpenDialogCheckout} />
+            </MediaQuery>
+          </Col>
+        </Row>
+      </Container>
+      <MediaQuery maxWidth={768}>
+        <MobileTotalPriceCard numbItems={numbItems} totalPrices={totalPrices} openDialogCheckout={setOpenDialogCheckout} />
+      </MediaQuery>
+    </>
   );
 };
 
