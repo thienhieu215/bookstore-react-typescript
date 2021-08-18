@@ -92,7 +92,6 @@ const ListView = () => {
             ))}
           </Col>
           <Col xs={12} sm={12} md={12} lg={4}>
-
             <MediaQuery minWidth={769}>
               <TotalPriceCard numbItems={numbItems} totalPrices={totalPrices} openDialogCheckout={setOpenDialogCheckout} />
             </MediaQuery>

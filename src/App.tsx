@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive'
 
 function App() {
 
-  const noFooter = useMediaQuery({ query: '(max-width: 768px)' })
+  const noFooter = useMediaQuery({ query: '(max-width: 769px)' })
 
   console.log(window.location.pathname)
 
@@ -20,7 +20,7 @@ function App() {
           <div className="content-wrap">
             <Route path='/' component={Routes} />
           </div>
-          {noFooter && window.location.pathname !== '/cart' ? <Footer /> : <></>}
+          {noFooter && window.location.pathname === '/cart' ? <></> : <Footer /> }
         </div>
       </BrowserRouter>
     </div>
