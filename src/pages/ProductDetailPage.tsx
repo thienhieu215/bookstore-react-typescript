@@ -1,7 +1,6 @@
-import { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useHistory, useParams } from "react-router-dom";
 import { Container, Row, Col, Button, Image, ButtonGroup, Table, Tabs, Tab } from 'react-bootstrap'
-import { RouteComponentProps } from "react-router-dom";
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import { Product } from '../components/GridView/GridView'
@@ -10,14 +9,17 @@ import { addToCart } from '../store/slices/cartSlice'
 import { useDispatch } from "react-redux";
 import { getDetailBookAPI } from '../components/api';
 import style from './Page.module.scss'
+import Dialog from './../components/Dialog/ConfirmDialog'
 
 const DetailPage = () => {
 
   const [bookDetail, setBookDetail] = useState<any>({})
   const [quantity, setQuantity] = useState<number>(1)
   const [tabKey, setTabKey] = useState('info');
+  const [openDialog, setOpenDialog] = React.useState<boolean>(false);
   const dispatch = useDispatch()
   const { bookId }: { bookId: string } = useParams();
+  let history = useHistory();
 
   const addItemToCart = (product: Product): void => {
     let obj: CartItem = {
@@ -29,7 +31,9 @@ const DetailPage = () => {
       quantity: quantity.toString()
     }
     dispatch(addToCart(obj))
+    setOpenDialog(true)
     setQuantity(1)
+
   }
 
   const getDetailBook = async (): Promise<any> => {
@@ -54,6 +58,12 @@ const DetailPage = () => {
 
   return (
     <Container className={style.DetailPage}>
+
+      <Dialog title='SUCCESSFULLY ADDED TO CART!' agreeContent='View Cart' closeContent='Continue Shopping'
+        content={`"${bookDetail.title}" is added to your cart. What do you want to do next?`}
+        func={() => history.push('/cart')} handleClose={() => setOpenDialog(false)} isOpen={openDialog}
+      />
+
       <Row className={style.bookInfo}>
         <Col lg={5} md={5} sm={5}>
           <Image fluid src={bookDetail.image} />
@@ -77,10 +87,9 @@ const DetailPage = () => {
               </Button>
             </ButtonGroup>
           </div>
-          <Button className={style.addCartBtn} size="lg"
-            onClick={() => addItemToCart(bookDetail)}>
+          <button className={style.addCartBtn} onClick={() => addItemToCart(bookDetail)}>
             Add to Cart
-          </Button>
+          </button>
         </Col>
       </Row>
       <Col className={style.Tabs} lg={8}>

@@ -25,7 +25,7 @@ const CheckoutDialog = ({ isOpen, handleClose, title, agreeContent, closeContent
 
   console.log(open, 'as')
   return (
-    <Modal show={open} onHide={handleClose} backdrop="static" keyboard={false}>
+    <Modal centered show={open} onHide={handleClose} backdrop="static" keyboard={false}>
       <Modal.Header>
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>

@@ -4,7 +4,7 @@ import style from './Dialog.module.scss'
 const ConfirmDialog = ({ isOpen, handleClose, title, content, agreeContent, closeContent, func }: ConfirmDialogProps) => {
 
   return (
-    <Modal show={isOpen} onHide={handleClose} backdrop="static" keyboard={false}>
+    <Modal centered show={isOpen} onHide={handleClose} backdrop="static" keyboard={false}>
       <Modal.Header>
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>

@@ -38,21 +38,31 @@
       }
     }
     .addCartBtn {
-      color: #b2395b; background-color: whitesmoke;
-      outline: auto; outline-color: #b2395b;
+      color: whitesmoke;
+      background-color: #b2395b;
+      border: none;
       box-shadow: none;
+      display: block;
+      font-weight: 400;
+      text-align: center;
+      font-size: 1.3rem;
+      border-radius: 0.25rem;
+      padding: .5rem 1rem;
       &:active:focus {
-        color: whitesmoke; background-color: #b2395b;
-        outline: auto; outline-color: #b2395b;
+        color: whitesmoke;
+        background-color: #7c273f;
+        border: none;
         box-shadow: none;
       }
       &:focus {
-        color: #b2395b; background-color: whitesmoke;
-        outline: auto; outline-color: #b2395b;
+        color: whitesmoke;
+        background-color: #b2395b;
+        border: none;
         box-shadow: none;
       }
     }
   }
+
   .Tabs {
     text-align: left;
     margin-left: auto;
@@ -87,7 +97,7 @@
   }
   .text {
     font-size: 18px;
-    .bold{
+    .bold {
       font-weight: bold;
     }
   }
