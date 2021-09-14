@@ -22,8 +22,10 @@
     }
   }
   .last {
-    display: flex;
-    justify-content: space-between;
+    @media only screen and (min-width: 425px) {
+      display: flex;
+      justify-content: space-between;
+    }
     color: #b2395b;
     font-weight: 400;
     padding-bottom: 5px;

@@ -17,9 +17,20 @@ const GridView = ({ newBooksList }: GridViewProps) => {
   return (
     <Container>
       <MediaQuery maxWidth={768}>
+        {newBooksList.length === 0
+          ?
+          <Skeleton type={'mobileList'} />
+          :
+          (
+            newBooksList.map((product, index) => (
+              <MobileCard productInfo={product} />
+            ))
+          )
+        }
+        {/* <Skeleton type={'mobileList'} />
         {newBooksList.map((product, index) => (
           <MobileCard productInfo={product} />
-        ))}
+        ))} */}
       </MediaQuery>
       <MediaQuery minWidth={769}>
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>

@@ -26,8 +26,8 @@ const Footer = () => {
           </a>
         </Col>
         <div className={style.last}>
-          <div>&copy; 2021 Hieu Nguyen, Ho Chi Minh City, Vietnam</div>
           <div>thienhieu215@gmail.com | +84 0915209318</div>
+          <div>&copy; 2021 Hieu Nguyen, Ho Chi Minh City, Vietnam</div>
         </div>
       </Container>
 

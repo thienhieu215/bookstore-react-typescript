@@ -1,4 +1,4 @@
-import { Card } from 'react-bootstrap'
+import { Card, Row, Col } from 'react-bootstrap'
 import style from '../GridView/Card.module.scss'
 
 const Skeleton = ({ type }: SkeletonProps) => {
@@ -16,13 +16,27 @@ const Skeleton = ({ type }: SkeletonProps) => {
     )
   }
 
+  const GridViewSkeletonMobile = () => {
+    return (
+      <Row className={style.mobileCard}>
+        <Col xs={4}>
+          <div className={style.skeletonImg}></div>
+        </Col>
+        <Col className={style.titleprice} xs={8}>
+          <div className={style.skeletonText}></div>
+          <div className={style.skeletonText}></div>
+          <div className={style.skeletonText}></div>
+        </Col>
+      </Row>
+    )
+  }
+
   return (
     <>
-      {type === 'grid'
-        ?
-        Array(10).fill(<GridViewSkeleton />)
-        :
-        <h1>a</h1>}
+      {type === 'grid' ? Array(10).fill(<GridViewSkeleton />)
+        : type === 'mobileList' ? Array(10).fill(<GridViewSkeletonMobile />)
+        : null
+      }
     </>
   )
 }

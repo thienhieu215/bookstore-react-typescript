@@ -15,9 +15,6 @@
     margin-top: 0.2em;
     animation: skeleton-loading 1s linear infinite alternate;
   }
-  .img {
-    height: calc(width * 1.16661);
-  }
   .title a {
     padding-top: 0px !important;
     line-height: 1.3em;
@@ -43,6 +40,18 @@
 
 .mobileCard {
   text-decoration: none;
+  margin-bottom: 5px;
+  .skeletonImg {
+    animation: skeleton-loading 1s linear infinite alternate;
+    padding-top: 116.66%;
+    width: 100%;
+  }
+  .skeletonText {
+    height: 1.1em;
+    width: 100%;
+    margin-top: 0.5em;
+    animation: skeleton-loading 1s linear infinite alternate;
+  }
   .titleprice {
     text-align: left;
     margin-top: auto;
