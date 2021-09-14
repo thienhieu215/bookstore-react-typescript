@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Product } from '../GridView/GridView'
 import { useDispatch, useSelector } from "react-redux";
 import { increase, reduce, removeFromCart, clearCart } from '../../store/slices/cartSlice'
 import { TStore } from "../../store/store";
 import Dialog from '../Dialog/ConfirmDialog'
 import CheckoutDialog from '../Dialog/CheckoutDialog'
-import { Container, Row, Col, Card, Button } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import style from './ListView.module.scss'
 import CartCard from './CartCard'
 import TotalPriceCard from './TotalPriceCard'
@@ -31,7 +31,6 @@ const ListView = () => {
     let temp: number = 0
     for (let i = 0; i < items.length; i++) {
       temp += parseFloat(items[i].price.replace('$', '')) * parseInt(items[i].quantity)
-      console.log(temp)
     }
     let tempToString: string = temp.toFixed(2)
     return tempToString
@@ -86,7 +85,7 @@ const ListView = () => {
         <Row>
           <Col xs={12} sm={12} md={12} lg={8}>
             {items.length > 0 && <div className={style.clearAll} onClick={handleShowClearAll}>Clear All</div>}
-            {items.length == 0 && <h4>No items in cart</h4>}
+            {items.length === 0 && <h4>No items in cart</h4>}
             {items.map((product, index) => (
               <CartCard productInfo={product} increase={increaseQuantity} reduce={reduceQuantity} showRemove={handleShowRemove} />
             ))}

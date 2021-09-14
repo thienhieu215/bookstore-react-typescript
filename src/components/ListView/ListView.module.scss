@@ -17,7 +17,7 @@
     text-align: left;
     margin-top: auto;
     margin-bottom: auto;
-    .title a {
+    .title {
       word-break: break-word;
       white-space: normal;
       overflow: hidden;
@@ -30,13 +30,15 @@
       line-height: 1.4em;
       min-height: 2.8em;
       max-height: 2.8em;
-      font-size: 0.7em;
-      // font-weight: 500;
+      font-size: 1.2em;
+      font-weight: 500;
+      margin: 4px 0px;
     }
     .price {
       font-size: 1.2em;
       color: #f7941e;
       font-weight: 600;
+      margin-bottom: 4px;
     }
     .quantityBtn {
       display: inline-block;
@@ -108,7 +110,7 @@
   background-color: rgb(255, 255, 255);
   bottom: 0px;
   position: fixed;
-  width:100%;
+  width: 100%;
   border: solid 1px #ebedee;
   display: flex;
   justify-content: space-between;

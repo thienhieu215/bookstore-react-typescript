@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, InputGroup, FormControl } from 'react-bootstrap'
+import { InputGroup, FormControl } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
 import style from './Searchbar.module.scss'

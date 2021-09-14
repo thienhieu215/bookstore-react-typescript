@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory, Link } from "react-router-dom";
-import { Row, Col, Card, Image } from 'react-bootstrap'
+import { Row, Col, Image } from 'react-bootstrap'
 import { Product } from './GridView';
 import style from './Card.module.scss'
 
 const MobileCard = ({ productInfo }: MobileCardProps) => {
 
   return (
-    // <Link className={style.mobileCard} to={{ pathname: `/detail/${productInfo.isbn13}` }}>
 
     <Row className={style.mobileCard}>
       <Col xs={4}>
@@ -23,7 +20,6 @@ const MobileCard = ({ productInfo }: MobileCardProps) => {
       </Col>
     </Row>
 
-    //</Link>
   );
 };
 

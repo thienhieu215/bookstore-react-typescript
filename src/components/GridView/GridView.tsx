@@ -1,5 +1,4 @@
-import React from 'react';
-import { Container, Row, Col, Card, Image } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import MediaQuery from 'react-responsive'
 import Skeleton from '../Skeleton/Skeleton';
 import FullsizeCard from './FullsizeCard';

@@ -3,7 +3,7 @@ import Grid, { Product } from '../components/GridView/GridView'
 import { Container } from 'react-bootstrap'
 import { getNewBooksAPI } from '../components/api';
 import style from './Page.module.scss'
-import Skeleton from '../components/Skeleton/Skeleton';
+
 
 const Home = () => {
 
@@ -23,7 +23,7 @@ const Home = () => {
       <h1 className={style.Title} style={{ textAlign: 'left', fontWeight: 600 }}>
         New Books
       </h1>
-      <Grid newBooksList={bookList}/>
+      <Grid newBooksList={bookList} />
     </Container>
   );
 };

@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/Navbar'
 import Routes from './components/Routes'
@@ -10,8 +9,6 @@ function App() {
 
   const noFooter = useMediaQuery({ query: '(max-width: 769px)' })
 
-  console.log(window.location.pathname)
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -20,7 +17,7 @@ function App() {
           <div className="content-wrap">
             <Route path='/' component={Routes} />
           </div>
-          {noFooter && window.location.pathname === '/cart' ? <></> : <Footer /> }
+          {noFooter && window.location.pathname === '/cart' ? <></> : <Footer />}
         </div>
       </BrowserRouter>
     </div>

@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from "react-router-dom";
 import { Container, Row, Col, Button, Image, ButtonGroup, Table, Tabs, Tab } from 'react-bootstrap'
 import AddIcon from '@material-ui/icons/Add';
@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { getDetailBookAPI } from '../components/api';
 import style from './Page.module.scss'
 import Dialog from './../components/Dialog/ConfirmDialog'
+
 
 const DetailPage = () => {
 

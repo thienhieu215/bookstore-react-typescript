@@ -1,5 +1,3 @@
-import { StepLabel } from '@material-ui/core';
-import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import style from './Page.module.scss'
 

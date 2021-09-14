@@ -1,4 +1,3 @@
-import React from 'react';
 import { Pagination, Row, Col } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
 import style from './Pagination.module.scss'
@@ -51,7 +50,7 @@ const PaginationComp = ({ totalItems, page, keyword }: PaginationProps) => {
                 {itemsIcrease(2, 6)}
               </>}
 
-            {currentPage >= 4 && <Pagination.Ellipsis className={style.inactive}/>}
+            {currentPage >= 4 && <Pagination.Ellipsis className={style.inactive} />}
             {(currentPage >= 4 && currentPage <= totalPages - 4) &&
               <>
                 <Pagination.Item className={style.inactive} onClick={() => changePage(currentPage - 2)}>{currentPage - 2}</Pagination.Item>
@@ -60,7 +59,7 @@ const PaginationComp = ({ totalItems, page, keyword }: PaginationProps) => {
                 <Pagination.Item className={style.inactive} onClick={() => changePage(currentPage + 1)}>{currentPage + 1}</Pagination.Item>
                 <Pagination.Item className={style.inactive} onClick={() => changePage(currentPage + 2)}>{currentPage + 2}</Pagination.Item>
               </>}
-            {currentPage <= totalPages - 4 && <Pagination.Ellipsis className={style.inactive}/>}
+            {currentPage <= totalPages - 4 && <Pagination.Ellipsis className={style.inactive} />}
 
             {(currentPage > totalPages - 4) &&
               <>

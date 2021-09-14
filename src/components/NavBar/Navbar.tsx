@@ -1,8 +1,6 @@
-import React from 'react';
-import style from './NavBar.module.scss'
 import { TStore } from "./../../store/store";
 import { useSelector } from "react-redux";
-import { Container, Navbar, Nav, NavDropdown, Row, Col } from 'react-bootstrap';
+import { Container, Navbar, Nav, Col } from 'react-bootstrap';
 import SearchBar from '../SearcBar/SearchBar';
 
 const NavigationBar = () => {

@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap'
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { createCheckOutInfo } from './../../store/slices/checkoutSlice'
 import style from './Dialog.module.scss'
@@ -16,14 +15,13 @@ const CheckoutDialog = ({ isOpen, handleClose, title, agreeContent, closeContent
 
   const dispatch = useDispatch()
   var open: boolean = isOpen
-  const { register, handleSubmit, formState: { errors }, setError, control, setValue, getValues } = useForm<Account>();
+  const { register, handleSubmit, formState: { errors } } = useForm<Account>();
 
   const createUser = (data: Account): void => {
     dispatch(createCheckOutInfo(data))
     open = false
   }
 
-  console.log(open, 'as')
   return (
     <Modal centered show={open} onHide={handleClose} backdrop="static" keyboard={false}>
       <Modal.Header>

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Card, Row, Col } from 'react-bootstrap'
 import { CartItem } from './ListView';
 import AddIcon from '@material-ui/icons/Add';
@@ -15,11 +14,11 @@ const FullsizeCard = ({ productInfo, increase, reduce, showRemove }: FullsizeCar
           <Card.Img variant="top" src={productInfo.image} />
         </Col>
         <Col xs={7} className={style.prodInfo}>
-          <h4 className={style.title}>
-            <a>{productInfo.title}</a>
-          </h4>
-          <Card.Text className={style.price}>{productInfo.price}</Card.Text>
-          <div>
+          <div className={style.title}>
+            {productInfo.title}
+          </div>
+          <div className={style.price}>{productInfo.price}</div>
+          <div style={{marginBottom: '4px'}}>
             <RemoveIcon className={style.quantityBtn} onClick={() => reduce(productInfo)} />
             &nbsp;
             <div className={style.quantity}>{productInfo.quantity}</div>

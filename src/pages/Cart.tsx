@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
 import CartList from '../components/ListView/ListView'
 import { Container } from 'react-bootstrap'
 import style from './Page.module.scss'

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import style from './ListView.module.scss'
 
 const FullsizeCard = ({ numbItems, totalPrices, openDialogCheckout }: FullsizeCardProps) => {
