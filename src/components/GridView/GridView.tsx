@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, Image } from 'react-bootstrap'
 import MediaQuery from 'react-responsive'
+import Skeleton from '../Skeleton/Skeleton';
 import FullsizeCard from './FullsizeCard';
 import MobileCard from './MobileCard';
 
@@ -23,9 +24,16 @@ const GridView = ({ newBooksList }: GridViewProps) => {
       </MediaQuery>
       <MediaQuery minWidth={769}>
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-          {newBooksList.map((product, index) => (
-            <FullsizeCard productInfo={product} />
-          ))}
+          {newBooksList.length === 0
+            ?
+            <Skeleton type={'grid'} />
+            :
+            (
+              newBooksList.map((product, index) => (
+                <FullsizeCard productInfo={product} />
+              ))
+            )
+          }
         </div>
       </MediaQuery>
     </Container>
@@ -33,7 +41,7 @@ const GridView = ({ newBooksList }: GridViewProps) => {
 };
 
 type GridViewProps = {
-  newBooksList: Array<Product>
+  newBooksList: Array<Product>,
 }
 
 export default GridView;

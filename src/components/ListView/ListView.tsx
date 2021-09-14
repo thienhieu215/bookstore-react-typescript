@@ -30,7 +30,7 @@ const ListView = () => {
   const calculateTotalPrices = (): string => {
     let temp: number = 0
     for (let i = 0; i < items.length; i++) {
-      temp += (parseFloat(items[i].price.replace('$', '')) * parseInt(items[i].quantity))
+      temp += parseFloat(items[i].price.replace('$', '')) * parseInt(items[i].quantity)
       console.log(temp)
     }
     let tempToString: string = temp.toFixed(2)

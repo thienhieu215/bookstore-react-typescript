@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import { useHistory, Link } from "react-router-dom";
-import { Card, Button } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import { Product } from './GridView';
 import style from './Card.module.scss'
 
@@ -24,7 +22,7 @@ const FullsizeCard = ({ productInfo }: FullsizeCardProps) => {
 };
 
 type FullsizeCardProps = {
-  productInfo: Product
+  productInfo: Product,
 }
 
 export default FullsizeCard;

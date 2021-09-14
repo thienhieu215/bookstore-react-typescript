@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Grid, { Product } from '../components/GridView/GridView'
 import { Container } from 'react-bootstrap'
 import { searchBookAPI } from '../components/api';
-import SearchBar from '../components/SearcBar/SearchBar';
 import Pagination from '../components/Pagination';
 import { useLocation } from 'react-router';
 import style from './Page.module.scss'
@@ -18,6 +17,7 @@ const SearchResults = () => {
   const pageParams: string = searchParams.get('page')!
 
   const getSearchResult = async (searchKeyword: string, searchPage: string): Promise<any> => {
+    setSearchBookList([])
     let result = await searchBookAPI(searchKeyword, searchPage)
     setSearchBookList(result.data.books)
     setTotalSearchNum(result.data.total)
@@ -26,6 +26,7 @@ const SearchResults = () => {
   useEffect(() => {
     getSearchResult(keywordParams, pageParams)
   }, [keywordParams, pageParams])
+
 
   return (
     <Container className={style.SearchPage}>
