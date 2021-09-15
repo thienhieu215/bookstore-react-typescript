@@ -1,6 +1,6 @@
 # Online Bookstore Project
 
-Demo Link: https://bookstore-react-typescript.vercel.app/
+Demo Link: https://bookstore-react-typescript-six.vercel.app/
 
 In the project, I have used the following libraries:
 
